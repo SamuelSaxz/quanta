@@ -1,10 +1,11 @@
 {
   "name": "server",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --env-file=../../.env --hot src/index.ts"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.7.5",
+    "@ngrok/ngrok": "^1.6.0",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
     "hono": "^4.10.7",

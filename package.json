@@ -13,5 +13,13 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "db:generate": "bunx --env-file=.env drizzle-kit generate --config=packages/db/drizzle.config.ts",
+    "db:migrate": "bunx --env-file=.env drizzle-kit migrate --config=packages/db/drizzle.config.ts",
+    "db:studio": "bunx --env-file=.env drizzle-kit studio --config=packages/db/drizzle.config.ts",
+    "db:seed": "bunx --env-file=.env tsx packages/db/src/seed/index.ts",
+    "start": "cd apps/client && bun run start",
+    "dev": "cd apps/server && bun run dev"
   }
 }

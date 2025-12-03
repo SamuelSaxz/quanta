@@ -28,7 +28,7 @@
     "paths": {
       // apps
       "@client/*": [
-        "apps/client/src/*"
+        "apps/client/*"
       ],
       "@server/*": [
         "apps/server/src/*"
