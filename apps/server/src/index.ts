@@ -1,4 +1,6 @@
 import { makeUsersController } from "@auth/modules/users/users.controller";
+import ngrok from "@ngrok/ngrok";
+import { env } from "@shared/config";
 import type { Session, User } from "@shared/types";
 import {
   AppError,
@@ -98,12 +100,12 @@ export default {
   fetch: app.fetch,
 };
 
-// await ngrok.authtoken(env.NGROK_TOKEN);
+await ngrok.authtoken(env.NGROK_TOKEN);
 
-// const tunnel = await ngrok.connect({ addr: 8000 });
+const tunnel = await ngrok.connect({ addr: 8000 });
 
-// const publicUrl = tunnel.url()?.toString();
+const publicUrl = tunnel.url()?.toString();
 
-// console.log("===== NGROK ATIVO =====");
-// console.log("URL pública:", publicUrl);
-// console.log("========================");
+console.log("===== NGROK ATIVO =====");
+console.log("URL pública:", publicUrl);
+console.log("========================");
